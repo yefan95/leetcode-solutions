@@ -1,5 +1,10 @@
 package de.yefan.leetcode;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  * Remove Duplicates from Sorted Array
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
@@ -40,6 +45,22 @@ public class Num26 {
             }
         }
         return i;
+    }
+
+    public int removeDuplicates2(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!list.contains(nums[i])) {
+                list.add(nums[i]);
+            }
+        }
+        for (int i = 0; i < list.size(); i++) {
+            nums[i] = list.get(i);
+        }
+        return list.size();
     }
 
 }
