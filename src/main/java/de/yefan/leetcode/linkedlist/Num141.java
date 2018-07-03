@@ -1,4 +1,4 @@
-package de.yefan.leetcode;
+package de.yefan.leetcode.linkedlist;
 
 import java.util.HashSet;
 import java.util.Set;

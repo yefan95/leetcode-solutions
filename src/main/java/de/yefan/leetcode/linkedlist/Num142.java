@@ -1,4 +1,4 @@
-package de.yefan.leetcode;
+package de.yefan.leetcode.linkedlist;
 
 import jdk.nashorn.internal.objects.NativeUint8Array;
 

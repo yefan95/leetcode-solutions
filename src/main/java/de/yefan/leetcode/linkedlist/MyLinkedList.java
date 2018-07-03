@@ -5,6 +5,18 @@ package de.yefan.leetcode.linkedlist;
  */
 public class MyLinkedList {
 
+    /**
+     * Define ListNode.
+     */
+    class ListNode {
+        int val;
+        ListNode next;
+
+        public ListNode(int x) {
+            val = x;
+        }
+    }
+
     private ListNode head;
     private int size;
 
@@ -151,14 +163,4 @@ public class MyLinkedList {
     }
 }
 
-/**
- * Define ListNode.
- */
-class ListNode {
-    int val;
-    ListNode next;
 
-    public ListNode(int x) {
-        val = x;
-    }
-}

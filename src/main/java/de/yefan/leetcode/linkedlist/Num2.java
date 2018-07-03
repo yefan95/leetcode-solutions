@@ -1,4 +1,4 @@
-package de.yefan.leetcode;
+package de.yefan.leetcode.linkedlist;
 
 /**
  * Add Two Numbers
