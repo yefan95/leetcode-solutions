@@ -1,4 +1,4 @@
-package de.yefan.leetcode;
+package de.yefan.leetcode.array;
 
 /**
  * Remove Duplicates from Sorted Array II

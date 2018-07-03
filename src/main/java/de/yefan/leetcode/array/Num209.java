@@ -1,4 +1,4 @@
-package de.yefan.leetcode;
+package de.yefan.leetcode.array;
 
 /**
  * Minimum Size Subarray Sum

@@ -1,6 +1,4 @@
-package de.yefan.leetcode;
-
-import java.lang.annotation.Native;
+package de.yefan.leetcode.array;
 
 /**
  * Find Pivot Index
