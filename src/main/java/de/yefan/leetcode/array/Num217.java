@@ -1,6 +1,8 @@
 package de.yefan.leetcode.array;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Contains Duplicate
@@ -17,6 +19,17 @@ public class Num217 {
             if (nums[i] == nums[i + 1]) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean containsDuplicate1(int[] nums) {
+        Set<Integer> set = new HashSet<>(nums.length);
+        for (int x : nums) {
+            if (set.contains(x)) {
+                return true;
+            }
+            set.add(x);
         }
         return false;
     }
