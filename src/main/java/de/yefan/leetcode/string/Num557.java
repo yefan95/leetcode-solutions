@@ -33,8 +33,7 @@ public class Num557 {
             arr[i] = arr[n - i - 1];
             arr[n - i - 1] = temp;
         }
-        StringBuffer sb = new StringBuffer();
-        return sb.append(arr).toString();
+        return new String(arr);
     }
 
     public static void main(String[] agrs) {
