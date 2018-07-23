@@ -50,4 +50,14 @@ public class Num112 {
         return false;
     }
 
+    public boolean hasPathSum1(TreeNode root, int sum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null && sum - root.val == 0) {
+            return true;
+        }
+        return hasPathSum1(root.left, sum - root.val) || hasPathSum1(root.right, sum - root.val);
+    }
+
 }
