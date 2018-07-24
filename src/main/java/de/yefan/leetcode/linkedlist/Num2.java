@@ -102,6 +102,7 @@ public class Num2 {
                 tail = node;
             }
         }
+
         return result;
     }
 
