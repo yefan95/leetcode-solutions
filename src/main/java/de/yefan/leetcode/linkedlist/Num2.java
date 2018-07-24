@@ -4,8 +4,6 @@ package de.yefan.leetcode.linkedlist;
  * Add Two Numbers
  * https://leetcode.com/problems/add-two-numbers/description/
  */
-
-
 public class Num2 {
 
     public class ListNode {
@@ -66,6 +64,43 @@ public class Num2 {
             }
 
             p1 = p1.next;
+        }
+        return result;
+    }
+
+    public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
+        ListNode result = null;
+        ListNode tail = null;
+        int carry = 0;
+        while (l1 != null || l2 != null || carry != 0) {
+            int l1Val = 0;
+            if (l1 != null) {
+                l1Val = l1.val;
+                l1 = l1.next;
+            }
+
+            int l2Val = 0;
+            if (l2 != null) {
+                l2Val = l2.val;
+                l2 = l2.next;
+            }
+
+            int sum = l1Val + l2Val + carry;
+            ListNode node = null;
+            if (sum > 9) {
+                carry = 1;
+                node = new ListNode(sum % 10);
+            } else {
+                carry = 0;
+                node = new ListNode(sum);
+            }
+            if (result == null) {
+                result = node;
+                tail = node;
+            } else {
+                tail.next = node;
+                tail = node;
+            }
         }
         return result;
     }
