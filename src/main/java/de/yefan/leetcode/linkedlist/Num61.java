@@ -1,5 +1,7 @@
 package de.yefan.leetcode.linkedlist;
 
+import java.util.List;
+
 /**
  * Rotate List
  * https://leetcode.com/problems/rotate-list/description/
@@ -92,6 +94,32 @@ public class Num61 {
         start = head.next;
         head.next = null;
         return start;
+    }
+
+    public ListNode rotateRight2(ListNode head, int k) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode fast = dummy, slow = dummy;
+
+        int count;
+
+        for (count = 0; fast.next != null; count++) {
+            fast = fast.next;
+        }
+
+        for (int j = count - k % count; j > 0; j--) {
+            slow = slow.next;
+        }
+
+        fast.next = dummy.next;
+        dummy.next = slow.next;
+        slow.next = null;
+
+        return dummy.next;
     }
 
 
