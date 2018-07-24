@@ -1,4 +1,4 @@
-package de.yefan.leetcode.linkedlist;
+package de.yefan.leetcode.btree;
 
 import java.util.ArrayList;
 import java.util.List;
