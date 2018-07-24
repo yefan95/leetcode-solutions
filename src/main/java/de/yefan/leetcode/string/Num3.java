@@ -1,5 +1,6 @@
 package de.yefan.leetcode.string;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,6 +24,24 @@ public class Num3 {
             }
         }
         return ans;
+    }
+
+    public int lengthOfLongestSubstring1(String s) {
+        if (s.length() < 2) {
+            return s.length();
+        }
+        int[] map = new int[256];
+        Arrays.fill(map, -1);
+        int start = -1, max = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (map[s.charAt(i)] > start) {
+                start = map[s.charAt(i)];
+            }
+            map[s.charAt(i)] = i;
+            max = Math.max(max, i - start);
+        }
+
+        return max;
     }
 
 }
