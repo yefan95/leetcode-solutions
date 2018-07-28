@@ -23,6 +23,35 @@ public class Num123 {
         return release2;
     }
 
+    public int maxProfit1(int[] prices) {
+        if (prices.length < 2) {
+            return 0;
+        }
+        int[] l = new int[prices.length + 1];
+        int[] r = new int[prices.length + 1];
+        int sum = 0;
+        int diff[] = new int[prices.length];
+        for (int i = 1; i < diff.length; i++) {
+            diff[i] = prices[i] - prices[i - 1];
+        }
+        for (int i = 2; i < l.length; i++) {
+            l[i] = Math.max(diff[i - 1] + sum, l[i - 1]);
+            sum = Math.max(0, sum + diff[i - 1]);
+        }
+        sum = 0;
+        for (int i = r.length - 3; i >= 0; i--) {
+            r[i] = Math.max(diff[i + 1] + sum, r[i + 1]);
+            sum = Math.max(0, sum + diff[i + 1]);
+        }
+        sum = 0;
+        for (int i = r.length - 1; i >= 0; i--) {
+            if (l[i] + r[i] > sum) {
+                sum = l[i] + r[i];
+            }
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         Num123 num123 = new Num123();
         int[] prices = {1, 2, 3, 4, 5};
